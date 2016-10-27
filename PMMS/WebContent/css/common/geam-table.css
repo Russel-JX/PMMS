@@ -1,0 +1,48 @@
+.table th, .table td
+{
+	font-size: 14px !important;
+}
+
+.dataTables_scrollBody table
+{
+	margin-bottom:0px;
+	border:0px;
+}
+
+.dataTables_scrollBody table td:not(.no-show):nth-child(1)
+{
+	border-left:0px;
+}
+
+.last-total-col
+{
+	color:#F1B940 !important;
+	background-color: #3f4145;
+}
+
+.last-total-col:hover
+{
+	background-color: #3f4145 !important;
+}
+
+.last-total-col td
+{
+	color:#F1B940 !important;
+	font-size:16px !important;
+	font-weight:bold;
+}
+
+table.dataTable thead tr.filter-row td {
+background-color: rgb(227, 239, 210);
+border-color: #c9cccf;
+}
+
+table.dataTable thead tr.filter-row td input
+{
+	background-color: white;
+}
+
+.table-controls
+{
+	margin-top:5px;
+}

@@ -1,0 +1,112 @@
+ .left-menu-content ul,.left-menu-content li 
+{
+	background:none;
+	font-size: 15px;
+}
+
+.left-menu-content li 
+{
+	margin-top:10px;
+	list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative;
+}
+
+.left-menu-content li.collapsible-list-subnav >span> a
+{
+	text-decoration: none;
+	color:#5c5f63 !important;
+	font-weight:bold;
+}
+
+ ul.collapsible-list li:not(.collapsible-list-subnav)>span> a:hover
+{
+	color:white !important;
+	background-color:#3b73b9;
+	font-weight:bold;
+	padding-left: 5px;
+	padding-right: 5px;
+} 
+
+.left-menu-content li a
+{
+	color:#3b73b9 !important;
+	text-decoration: none;
+}
+
+i.rotatable
+{
+	transition: all .4s ease !important;
+	margin-top:3px !important;
+	height:20px !important;
+	margin-right:15px !important; 	
+	font-size:17px;
+}
+
+i.rotate
+{
+	transform: rotate(90deg) !important;
+	margin-top:0px !important;
+} 
+
+.collapsible-list-subnav.sub-parent
+{
+	padding-left:20px;
+}
+
+.collapsible-list-subnav li
+{
+	padding-left:33px;
+	padding-top:6px;
+}
+.collapsible-list-subnav li a
+{
+	font-size:14px !important;
+}
+
+#main-parent-left-menu
+{
+	display:block;
+}
+
+.left-menu-content li.collapsible-list-subnav> span 
+{
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none;
+    background-color: #f5f5f5;
+    display:block;
+
+}
+.left-menu-content li.collapsible-list-subnav> span:hover 
+{
+	background-color: #3b73b9;
+	
+}
+.left-menu-content li.collapsible-list-subnav> span:hover a,.left-menu-content li.collapsible-list-subnav> span:hover a.collapsible-list-parent
+{
+	color:#FFFFFF !important;
+	text-decoration:none;
+}
+
+/* .left-menu-content li span:hover a
+{
+	color:black !important;
+} */
+
+.left-menu-content li.parent_li>span {
+    cursor:pointer
+}
+
+
+.left-menu-content li.parent_li>span:hover, .left-menu-content li.parent_li>span:hover+ul li span {
+    background:#eee;
+    border:1px solid #94a0b4;
+    color:#000
+}  
+
+.left-menu-content li.collapsible-list-subnav >span> a.collapsible-list-parent
+{
+	color: #BE4E34 !important;
+}

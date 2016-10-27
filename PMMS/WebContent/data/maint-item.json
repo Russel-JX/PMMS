@@ -1,0 +1,16 @@
+{
+   "aaData":[
+						 	{
+						 		"id":"<input type='checkbox'>1","id":"1","maint_item":"检查电源电线是否完好无破损","cycle":"M","maint_way":"2、4","standard":"完好"
+						 	},
+						 	{
+						 		"id":"<input type='checkbox'>2","id":"2","maint_item":"检查停止开关是否有效","cycle":"M","maint_way":"2、4","standard":"有效"
+						 	},
+						 	{
+						 		"id":"<input type='checkbox'>3","id":"3","maint_item":"有无漏油现象","cycle":"M","maint_way":"2、3","standard":"无漏油"
+						 	},
+						 	{
+						 		"id":"<input type='checkbox'>4","id":"4","maint_item":"各油压阀是否工作正常","cycle":"Q","maint_way":"2、3、4","standard":"正常"
+						 	}
+						 ]
+}

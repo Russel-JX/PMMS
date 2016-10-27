@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- 1:Database connection settings -->
+  <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+  <!--2:other configure -->
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.hbm2ddl.auto">none</property>
+  <property name="hibernate.validator.apply_to_ddl">false</property> 
+  <property name="hibernate.validator.autoregister_listeners">false</property>
+  <!-- 3：mapping files -->
+  <mapping class="com.ge.pmms.po.OrderInfo"/>
+  <mapping class="com.ge.pmms.po.EquipInfo"/>
+  <mapping class="com.ge.pmms.po.EquipNameInfo"/>
+  <mapping class="com.ge.pmms.po.MaintItem"/>
+  <mapping class="com.ge.pmms.po.EquipDocInfo"/>
+  <mapping class="com.ge.pmms.po.EquipDocDetail"/>
+  <mapping class="com.ge.pmms.po.WorkOrderInfo"/>
+  <mapping class="com.ge.pmms.po.WorkOrderMaintenanceInfo"/>
+  <mapping class="com.ge.pmms.po.SparePartInfo"/>
+  <mapping class="com.ge.pmms.po.SparePartTransInfo"/>
+  <mapping class="com.ge.pmms.po.FaultTypeInfo"/>
+  <!--  
+  <mapping class="com.ge.pmms.po.EquipNameInfo"/>
+  <mapping class="com.ge.pmms.po.EquipInfo"/>
+  -->
+  <mapping class="com.ge.pmms.po.PlanInfo"/>
+  <mapping class="com.ge.pmms.po.IdmInfo"/>
+  <mapping class="com.ge.pmms.po.IdmTransInfo"/>
+  <mapping class="com.ge.pmms.po.DeptInfo"/>
+  <mapping class="com.ge.pmms.po.RoleInfo"/>
+  <mapping class="com.ge.pmms.po.UserRoleMap"/>
+  <mapping class="com.ge.pmms.po.RolePageMap"/>
+  <mapping class="com.ge.pmms.po.UserInfo"/>
+  <mapping class="com.ge.pmms.po.User"/>
+  <mapping class="com.ge.pmms.po.ReminderInfo"/>
+  <mapping class="com.ge.pmms.po.Role"/>
+  <mapping class="com.ge.pmms.po.Module"/>
+  <mapping class="com.ge.pmms.po.SubModule"/>
+  <mapping class="com.ge.pmms.po.RoleModule"/>
+  <mapping class="com.ge.pmms.po.RoleSubModule"/>
+  <mapping class="com.ge.pmms.po.SysParamsInfo"/>
+  <mapping class="com.ge.pmms.po.IdmTypeDetail"/>
+  <mapping class="com.ge.pmms.po.IdmPoInfo"/>
+  
+ </session-factory>
+</hibernate-configuration>

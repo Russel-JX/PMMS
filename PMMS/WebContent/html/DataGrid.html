@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DataGrid</title>
+	<!-- <link rel="stylesheet" type="text/css" href="/PMMS/css/app/bootstrap.css" /> -->
+	<link href="css/themes/iids/iids.min.css" rel="stylesheet" type="text/css">
+	<!-- <script type="text/javascript" src="/PMMS/js/vendor/jqueryui-sortable-amd/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="/PMMS/js/vendor/datagrid/datagrids-floater.js"></script> -->
+	<script src="js/vendor/require-jquery.js"></script>
+	<script src="js/common.js"></script>
+	<!-- <script type="text/javascript" src="/PMMS/js/vendor/bootstrap.js"></script> -->
+	
+	
+	<script type="text/javascript">
+		require( ['jquery', 'ge/datatables','bootstrap','chosen','datepicker'], function($) {
+			$('#testTable').iidsBasicDataGrid({
+				 "useFloater": true, //turn off cell filtering layer
+				 "aLengthMenu": [[100, 25, 2, -1], [100, 25, 2, "All"]],
+				 "aoColumns": [
+				 {sTitle: 'Engine', mData: 'engine'},
+				 {sTitle: 'Fulcrum version', mData: 'fulcrumVersion'},
+				 {sTitle: 'Platform(s)', mData: 'platform'},
+				 {sTitle: 'Differential version', mData: 'differentialVersion'},
+				 {sTitle: 'Grade', mData: 'grade'}
+				 ],
+				 "sAjaxSource": 'data/dg.browsers.json'/* ,
+				 "aaData":[
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.1","platform":"Mary","differentialVersion":"35","grade":"SSTT"
+						 	},
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.2","platform":"Who","differentialVersion":"90","grade":"Suzhou"
+						 	},
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.3","platform":"Bob","differentialVersion":"35","grade":"Jiangsu"
+						 	}
+						 ] */
+			});
+		});
+		$(document).ready(function(){
+			/* $('table[data-table-name="testTable"]').iidsBasicDataGrid({
+				 "useFloater": false, //turn off cell filtering layer
+				 "aoColumns": [
+				 {sTitle: 'Engine', mData: 'engine'},
+				 {sTitle: 'Fulcrum version', mData: 'fulcrumVersion'},
+				 {sTitle: 'Platform(s)', mData: 'platform'},
+				 {sTitle: 'Differential version', mData: 'differentialVersion'},
+				 {sTitle: 'Grade', mData: 'grade'}
+				 ],
+				 //sAjaxSource: '/data/aa.browsers.json',
+				 "aaData":[
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.1","platform":"Mary","differentialVersion":"35","grade":"SSTT"
+						 	},
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.2","platform":"Who","differentialVersion":"90","grade":"Suzhou"
+						 	},
+						 	{
+						 		"engine":"<input type='checkbox'>","fulcrumVersion":"No.3","platform":"Bob","differentialVersion":"35","grade":"Jiangsu"
+						 	}
+						 ],
+				 'plugins': ['R'] //enable the col-reorder plugin (assumes 'col-reorder-amd' is on the page)
+			}); */
+		});
+	</script>
+</head>
+<body>
+	<button class="btn btn-primary btn-large">按钮</button>
+	<input class="input" data-filter-table="testTable"  />
+	<table id="testTable" class="table table-bordered" data-table-name="testTable"></table>
+</body>
+</html>

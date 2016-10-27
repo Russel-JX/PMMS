@@ -1,0 +1,20 @@
+.nav a
+{
+	font-family: "ge-inspira", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-size:16px !important;
+	color:#E6E6E6;
+}
+.active
+{
+	background-color:#3b73b9;
+}
+
+.tabbable .active
+{
+	background:none;
+}
+
+
+
+
+

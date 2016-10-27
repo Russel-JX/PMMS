@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>间接物料管理</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../favicon/favicon-144px.png">
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../favicon/favicon-114px.png">
+
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../favicon/favicon-72px.png">
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="../../favicon/favicon.png">
+<!--   <link href="js/vendor/prettify/prettify.css" rel="stylesheet">-->
+    <link href="../../css/themes/iids/iids.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../../favicon/favicon.ico">
+    <link href="../../css/app/chosen.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <link id="theme-ie" href="css/themes/iids/ie.min.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+   
+    <link href="../../css/app/custom.css" rel="stylesheet" type="text/css">
+    <link href="../../css/app/datepicker.css" rel="stylesheet" type="text/css">
+    <script src="../../js/util/modernizr-respond.js"></script>
+    <script src="../../js/util/require-jquery.js" data-main="idmMgmt.js"></script>
+    <script src="../../js/common.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="masthead navbar-inner">
+        <div class="container">
+            <a class="brand" href="#"><span class="ge-logo">General
+						Electric</span> Welcome to PMMS 欢迎进入通用电气航空系统(苏州)预测维护及管理系统 <small><i>powered
+                by</i> GE Aviation </small></a>
+            <button class="btn btn-collapse" data-toggle="collapse"
+                    data-target=".primary-navbar,.workspace-navbar">
+                <i class="icon-bar"></i> <i class="icon-bar"></i> <i
+                    class="icon-bar"></i>
+            </button>
+            <div class="notifications acc-info">
+                <ul>
+                    <li>Welcome User, Role<span>|</span></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="primary-navbar navbar-inner collapse">
+        <div class="container">
+            <ul class="nav">
+                <li ><a href="index.html">MaintenanceTrack.维修状态</a></li>
+                <li><a href="#">HistoryInfo.维修历史记录</a></li>
+                <li><a href="#">Planned M.保养计划</a></li>
+                <li ><a href="equipInfo.html">Equip.Info.设备信息</a></li>
+                <li class="active"><a href="spInfo.html">SP.Info.备件信息</a></li>
+                <li><a href="#">PublicFacilities.公用设施</a></li>
+                <li><a href="chartView.html">ChartDisp.图表查看</a></li>
+                <li><a href="#">WO.Manage.工单管理</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="page-header">
+        <div>
+            <h1 class="voice voice-brand pull-left">间接物料管理</h1>
+        </div>
+    </div>
+
+
+    <div class="row ui-sortable">
+        <div class="span12">
+            <section class="module">
+                <div class="tabbable" id="workflowtab">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab01" id="tab01Nav" data-toggle="tab">库存间接物料</a></li>
+                        <li><a href="#tab02" id="tab02Nav" data-toggle="tab">出入库记录</a></li>
+                        <li><a href="#tab03" id="tab03Nav" data-toggle="tab">安全库存</a></li>
+                    </ul>
+                    <!--<div class="tab-content">-->
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="tab01">
+
+
+                            <div id="myWorkflow1" class="pull-left">
+
+                                 <div class="module-body">
+                                    <form class="form-horizontal" style="margin-bottom:0;">
+                                        <fieldset>
+                                            <div class="sec-lft pull-left" style="width:50%">
+                                                <div class="control-group multiselect">
+                                                    <label style="width:200px;" class="control-label">选择类别Select Class:</label>
+                                                    <div style="margin-left:140px;" class="controls">
+                                                        <select class="span3" id="idmType">
+                                                            <option value="1">费用</option>
+                                                            <option value="2">固定资产</option>
+                                                            <option selected value="all">全部</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </fieldset>
+                                    </form>
+                                     
+                                </div>
+                               
+                                <div class="btn-group pull-left">
+                                    <button class="btn btn-primary pull-left" type="submit"  id="inBtn">扫描入库</button>
+                                    <button class="btn btn-primary pull-left" type="submit"  id="outBtn">扫描出库</button>
+                                    <button class="btn btn-primary pull-left" type="submit"  id="editStockIdm">修改</button>
+                                     <button class="btn btn-primary pull-left" type="submit"  id="editButton1">导出到excel</button>
+                                </div>
+                                
+                                <br/>
+                                <div class="module-body pull-left width100p">
+                                    <table id="stockTable" class="table table-striped table-bordered table-condensed" data-table-name="stockTable">
+
+                                    </table>
+                                </div>
+                                <br/>
+
+                            </div>
+
+                            <br>
+
+
+
+                        </div>
+
+
+                        <div class="tab-pane" id="tab02">
+
+
+                            <div id="myWorkflow2" class="pull-left">
+
+
+                                <div class="btn-group pull-left">
+                                    <button class="btn btn-primary pull-left" type="submit"  id="editRecord">修改</button>
+                                    <button class="btn btn-primary pull-left" type="submit"  id="editButton1">导出到excel</button>
+                                </div>
+                               
+                                <br/>
+                                <div class="module-body pull-left width100p">
+                                    <table id="recordTable" class="table table-striped table-bordered table-condensed" data-table-name="recordTable">
+
+                                    </table>
+                                </div>
+                                <br/>
+
+                            </div>
+
+
+                        </div>
+
+					<div class="tab-pane" id="tab03">
+							<div id="myWorkflow3" class="pull-left">
+
+								<div class="btn-group pull-left">
+                                    <button class="btn btn-primary pull-left" type="submit"  id="editButton1">导出到excel</button>
+                                </div>
+                                <form class="form-search">
+
+                                    <div class="input-append flR pull-right">
+                                        <input type="text" class="input-medium search-query" data-filter-table="saveStockTb" placeholder=""><button class="btn btn-icon btn-primary">搜索</button>
+                                    </div>
+                                </form>
+                                <br/>
+                                <div class="module-body pull-left width100p">
+                                    <table id="saveStockTb" class="table table-striped table-bordered table-condensed" data-table-name="saveStockTb">
+
+                                    </table>
+                                </div>
+                                <br/>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                
+                 <!-- In window-->
+                    <div id="idmInInfo" class="modal modal3 hide fade" style="display: none;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class=" icon-remove icon-white font13"></i></button>
+                            <h3>间接物料入库</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="module-body">
+
+                                <form style="margin-bottom:0;" class="form-horizontal">
+                                    <fieldset>
+                                        <!-- left -->
+                                        <div class="sec-lft pull-left" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>编码号Encod:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="factory" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>名称Name:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="name" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>规格Size:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="description" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>生产厂商Supplier:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="productArea" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- right -->
+                                        <div class="sec-rht pull-right" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>单价Price:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="type" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                             <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>数量Number:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="supplier" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>类别Class:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="encoding" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>子类Subclass:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="seriNum" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button href="#" class="btn btn-primary" id = "saveBtn">入库</button>
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">取消Cancle</a>
+                        </div>
+
+                    </div>
+                    
+                     <!-- out window-->
+                    <div id="idmOutInfo" class="modal modal3 hide fade" style="display: none;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class=" icon-remove icon-white font13"></i></button>
+                            <h3>间接物料出库</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="module-body">
+
+                                <form style="margin-bottom:0;" class="form-horizontal">
+                                    <fieldset>
+                                        <!-- left -->
+                                        <div class="sec-lft pull-left" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>编码号Encod:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="factory" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>名称Name:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="name" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>规格Size:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="description" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>生产厂商Supplier:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="productArea" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- right -->
+                                        <div class="sec-rht pull-right" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>单价Price:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="type" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                             <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>数量Number:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="supplier" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>类别Class:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="encoding" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>子类Subclass:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="seriNum" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button href="#" class="btn btn-primary" id = "deleBtn">出库</button>
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">取消Cancle</a>
+                        </div>
+
+                    </div>
+                    
+                     <!-- edit stock window-->
+                    <div id="editStockInfo" class="modal modal3 hide fade" style="display: none;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class=" icon-remove icon-white font13"></i></button>
+                            <h3>更新间接物料信息</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="module-body">
+
+                                <form style="margin-bottom:0;" class="form-horizontal">
+                                    <fieldset>
+                                        <!-- left -->
+                                        <div class="sec-lft pull-left" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>编码号:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="idmId_Edit" type="text" placeholder="" class="span3">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>名称:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="idmNm_Edit" type="text" placeholder="" class="span3" value="螺丝螺帽">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>规格:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="size_Edit" type="text" placeholder="" class="span3" value="G4 IDC5  5V">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>生产厂商:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="source_Edit" type="text" placeholder="" class="span3" value="华通电器厂">
+                                                </div>
+                                            </div>
+                                             <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>存放地点:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="position_Edit" type="text" placeholder="" class="span3" value="A1-6">
+                                                </div>
+                                       		 </div>
+                                        </div>
+                                       
+                                        
+                                        <!-- right -->
+                                        <div class="sec-rht pull-right" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>单价:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="price_Edit" type="text" placeholder="" class="span3" value="1">
+                                                </div>
+                                            </div>
+                                             <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>库存量:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="stockNum_Edit" type="text" placeholder="" class="span3" value="200">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                  <label class="control-label"  style="width:100px;"><b>类别:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <select class="type_Edit" id=type_Edit>
+                                                       <option value="0">---请选择---</option>
+                                                       <option value="1">费用</option>
+													   <option value="2">固定资产</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>子类:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="subType_Edit" type="text" placeholder="" class="span3" value="生产辅料">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button href="#" class="btn btn-primary" id = "update_Stock">更新Update</button>
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">取消Cancle</a>
+                        </div>
+
+                    </div>
+                    
+                      <!-- edit record window-->
+                    <div id="editRecordInfo" class="modal modal3 hide fade" style="display: none;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class=" icon-remove icon-white font13"></i></button>
+                            <h3>编辑出入库记录</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="module-body">
+
+                                <form style="margin-bottom:0;" class="form-horizontal">
+                                    <fieldset>
+                                        <!-- left -->
+                                        <div class="sec-lft pull-left" style="width:50%">
+                                         <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>流水号:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="trans_id" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>编码号:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="id_record" type="text" placeholder="" class="span3" value="fy0002">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>名称:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="idmNm_record" type="text" placeholder="" class="span3" value="订书机">
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>单价:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="price_record" type="text" placeholder="" class="span3" value="5">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>数量:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="amount_record" type="text" placeholder="" class="span3" value="5">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                       
+                                        
+                                        <!-- right -->
+                                        <div class="sec-rht pull-right" style="width:50%">
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>类别:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="type_record" type="text" placeholder="" class="span3" value="费用">
+                                                </div>
+                                            </div>
+                                             <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>子类:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="subType_record" type="text" placeholder="" class="span3" value="办公及后勤用品">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>入库时间:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="inTime_record" type="text" placeholder="" class="span3" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label"  style="width:100px;"><b>出库时间:</b></label>
+                                                <div class="controls" style="margin-left:110px;">
+                                                    <input id="outTime_record" type="text" placeholder="" class="span3" value="20150102">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button href="#" class="btn btn-primary" id = "update_record">更新</button>
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">取消Cancle</a>
+                        </div>
+
+                    </div>     
+<!--alert info -->
+                <div class="alert alert-success alert-fixed-top fade" style="">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <i class=" icon-remove icon-white"></i>
+                    </button>
+                    <button class="btn btn-small pull-right">Action</button>
+                    <strong>Well done!</strong> You successfully read this important
+                    alert message.
+                </div>
+</body>
+</html>

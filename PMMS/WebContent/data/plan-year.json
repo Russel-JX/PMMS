@@ -1,0 +1,16 @@
+{
+   "aaData":[
+						 	{
+						 		"xx":"<input type='checkbox'>","engine":"1","maintItem":"<button class='btn btn-primary' data-toggle='modal'  data-target='#modal-plan-maintItem-view'><div class='icon-search'></div></button>","fulcrumVersion":"设备1","platform":"型号1","differentialVersion":"SP301","maintType":"年度保养","grade1":"","grade2":"","grade3":"","grade4":"","grade5":"","grade6":"","grade7":"Y","grade8":"","grade9":"","grade10":"","grade11":"","grade12":""
+						 	},
+						 	{
+						 		"xx":"<input type='checkbox'>","engine":"2","maintItem":"<button class='btn btn-primary' data-toggle='modal'  data-target='#modal-plan-maintItem-view'><div class='icon-search'></div></button>","fulcrumVersion":"设备2","platform":"型号2","differentialVersion":"SP302","maintType":"季度保养","grade1":"","grade2":"Q","grade3":" ","grade4":"","grade5":"Q","grade6":"","grade7":"","grade8":"Q","grade9":"","grade10":"","grade11":"Q","grade12":""
+						 	},
+						 	{
+						 		"xx":"<input type='checkbox'>","engine":"3","maintItem":"<button class='btn btn-primary' data-toggle='modal'  data-target='#modal-plan-maintItem-view'><div class='icon-search'></div></button>","fulcrumVersion":"设备4","platform":"型号4","differentialVersion":"SP304","maintType":"月度保养","grade1":"M","grade2":"M","grade3":"M ","grade4":"M","grade5":"M","grade6":"M","grade7":"M","grade8":"M","grade9":"M","grade10":"M","grade11":"M","grade12":"M"
+						 	},
+						 	{
+						 		"xx":"<input type='checkbox'>","engine":"4","maintItem":"<button class='btn btn-primary' data-toggle='modal'  data-target='#modal-plan-maintItem-view'><div class='icon-search'></div></button>","fulcrumVersion":"设备3","platform":"型号3","differentialVersion":"SP303","maintType":"季度保养","grade1":"QM","grade2":"M","grade3":"M","grade4":"QM","grade5":"M","grade6":"M","grade7":"QM","grade8":"M","grade9":"M","grade10":"YQM","grade11":"M","grade12":"M"
+						 	}
+						 ]
+}

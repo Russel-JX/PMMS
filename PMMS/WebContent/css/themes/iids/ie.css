@@ -1,0 +1,13 @@
+.navbar .ge-logo {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  width: 36px;
+  height: 37px;
+  display: inline-block;
+  float: left;
+  margin: 0 9px 0 0;
+  background-color: transparent;
+  background: url(../../../img/iids/bitmap/ge-monogram.png) no-repeat;
+}

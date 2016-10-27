@@ -1,0 +1,50 @@
+b{
+font-family: "ge-inspira";
+}
+
+.verticalMiddleAlign{
+ vertical-align: middle;
+}
+
+.bodylink:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+}
+.bodylink:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+}
+.bodylink:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+}
+.bodylink {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+}
+.bodylink:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; TEXT-DECORATION: underline
+}
+
+.receivedMsg{
+FONT-SIZE: 11pt; COLOR: black;
+}
+.receivedMsgHeader{
+FONT-SIZE: 11pt; font-weight:bold; COLOR: green !important;
+}
+
+.receivedMsg a{
+	FONT-SIZE: 11pt; color: blue; text-decoration: underline;	
+}
+.receivedMsg a:visited{
+	FONT-SIZE: 12pt; color: purple; text-decoration: underline;	
+}
+
+.zeroMargin {
+margin-top: 0px !important;
+margin-left: 0px !important;
+margin-bottom: 0px !important;
+margin-right: 0px !important;
+}
+
+.verticalBaseline {
+vertical-align: baseline !important;	
+}
+	
